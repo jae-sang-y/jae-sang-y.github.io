@@ -1,3 +1,104 @@
-<h1>
-    It's Works!
-</h1>
+<!--PLEASE DON'T HACK THIS-->
+
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic');
+    
+    .Post
+    {
+        display:none;
+        visibility:hidden;
+    }
+</style>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+    
+    <!--PLEASE PLEASE DON'T HACK THIS-->
+    <script>
+      var config = {
+        apiKey: "AIzaSyASYz82jEqLjeVwlGh7Hzn_f-eXCabfPDA",
+        authDomain: "public-screen.firebaseapp.com",
+        databaseURL: "https://public-screen.firebaseio.com",
+        projectId: "public-screen",
+        storageBucket: "public-screen.appspot.com",
+        messagingSenderId: "751968067785"
+      };
+      firebase.initializeApp(config);
+    </script>
+</head>
+<body style="margin:0px 0px 0px 0px;background-color: #F8F8F8;font-size: 30px;">
+    <!--Settler-->
+    <div id ="head"></div>
+    
+    <div style ="background-color: #FFFFFF;width:90%; max-width: 800px; 
+    margin: auto; margin-top:300px; box-shadow: 5px 10px #DDDDDD; padding : 20px 20px 20px 20px;">
+        
+        
+        <div id="TextPusher" class='Post'>
+            <p align="center">
+                Public Screen에 글 올리기
+            </p>
+            <span style="font-size: 21px;">
+                <!--<p align="justify">
+                    Public Screen에 글 올리기
+                </p>-->
+                <form id="TextPusher_Form">
+                    <textarea id="TextPusher_Text" cols="40" rows="5" maxlength="50" style="font-family: 'Nanum Gothic', sans-serif;font-size: 80px;width:760px;margin-left:20px;"></textarea>
+                    <br/>
+                    <input id="TextPusher_Submit" type="button" value="보내기" style="width:760px;margin-left:20px;font-size: 20px;" onclick="TextPusher();"/>
+                </form>
+            </span>
+        </div>
+        
+        <div id="TubePusher" class='Post'>
+            <p align="center">
+                Public Screen에 유튜브 올리기
+            </p>
+            <span style="font-size: 21px;">
+                <form id="TubePusher_Form">
+                    <textarea id="TubePusher_Text" cols="50" rows="1" maxlength="50" style="font-family: 'Nanum Gothic', sans-serif;font-size: 29px;width:760px;margin-left:20px;padding-left:6px"></textarea>
+                    <br/>
+                    <input id="TubePusher_Submit" type="button" value="보내기" style="width:760px;margin-left:20px;font-size: 20px;" onclick="TubePusher();"/>
+                </form>
+            </span>
+        </div>
+        <div id="Help" class='Post' style="display:block;visibility: visible">
+            <span style="margin: 0px 0px 0px 0px;font-size: 28px;">
+                이 곳에 자료를 올리시면 기숙사동 1층의 화면에 표시됩니다!
+                <br/>   
+                <br/>
+                현재 테스트 버전이라 불안정하고
+                <br/>
+                디버깅을 위해 대부분 정보를 공개하고 있습니다.
+            </span>
+        </div>
+        
+        
+        
+    </div>
+    
+    <div style ="background-color: #FFFFFF;width:160px; max-width: 800px; height:60px; 
+    margin: auto; margin-top:580px;text-align: center; line-height: 60px; box-shadow: 5px 10px #DDDDDD;" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+        top
+    </div>
+    
+    <!--Load Resource-->
+</body>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#head").load("head.html")
+    });
+    
+    function TextPusher()
+    {
+        firebase.database().ref("notice").push().set($("#TextPusher_Text").val());
+        $("#TextPusher_Text").val('');
+    }
+    
+    function TubePusher()
+    {
+        firebase.database().ref("tube").push().set($("#TextPusher_Text").val());
+        $("#TextPusher_Text").val('');
+    }
+</script> 
+
