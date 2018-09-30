@@ -97,7 +97,7 @@
     
     function TubePusher()
     {
-        firebase.database().ref("tube").push().set($("#TextPusher_Text").val());
+        firebase.database().ref("tube").push().set($("#TubePusher_Text").val());
         $("#TextPusher_Text").val('');
     }
 </script> 
