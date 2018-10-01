@@ -43,7 +43,17 @@
                     Public Screen에 글 올리기
                 </p>-->
                 <form id="TextPusher_Form">
-                    <textarea id="TextPusher_Text" cols="40" rows="5" maxlength="50" style="font-family: 'Nanum Gothic', sans-serif;font-size: 80px;width:760px;margin-left:20px;"></textarea>
+                    <div style="width:780px;height:466px;overflow:hidden;">
+                        <textarea id="TextPusher_Text" cols="40" rows="5" maxlength="50" style="font-family: 'Nanum Gothic', sans-serif;font-size: 80px;width:760px;margin-left:20px;" onfocus="TextPusher_ExampleText_Select();" onblur="TextPusher_ExampleText_Deselect();"></textarea>
+                        <div id = "TextPusher_ExampleText">
+                            <p style="position:relative;top:-461px;font-family: 'Nanum Gothic', sans-serif;font-size: 80px;width:760px;margin: 0px 0px 0px 20px; pointer-events: none;color:#DDDDDD;">
+                                여기에 입력해주세요
+                            </p>
+                            <p id = "TextPusher_ExampleSubText" style="position:relative;top:-461px;font-family: 'Nanum Gothic', sans-serif;font-size: 30px;width:760px;margin: 0px 0px 0px 20px; pointer-events: none;color:#DDDDDD;" onload="TextPusher_ExampleText();">
+                                여기에 데이터를 입력
+                            </p>
+                        </div>
+                    </div>
                     <br/>
                     <input id="TextPusher_Submit" type="button" value="보내기" style="width:760px;margin-left:20px;font-size: 20px;" onclick="TextPusher();"/>
                 </form>
@@ -56,7 +66,13 @@
             </p>
             <span style="font-size: 21px;">
                 <form id="TubePusher_Form">
-                    <textarea id="TubePusher_Text" cols="50" rows="1" maxlength="50" style="font-family: 'Nanum Gothic', sans-serif;font-size: 29px;width:760px;margin-left:20px;padding-left:6px"></textarea>
+                    <div style="width:800px;height:40px; overflow: hidden;">
+                        <textarea id="TubePusher_Text" cols="50" rows="1" maxlength="50" style="font-family: 'Nanum Gothic', sans-serif;font-size: 29px;width:760px;margin-left:20px;padding-left:6px;height:40px;" onfocus="TubePusher_ExampleText_Select();" onblur="TubePusher_ExampleText_Deselect();">
+                        </textarea>
+                        <p id="TubePusher_ExampleText" style="position:relative;font-family: 'Nanum Gothic', sans-serif;font-size: 29px;width:760px;margin: 0px 0px 0px 20px;padding-left:6px;top:-40px;pointer-events: none;color:#DDDDDD;">
+                            https://www.youtube.com/watch?v=tIWpr3tHzII
+                        </p>
+                    </div>
                     <br/>
                     <input id="TubePusher_Submit" type="button" value="보내기" style="width:760px;margin-left:20px;font-size: 20px;" onclick="TubePusher();"/>
                 </form>
@@ -90,12 +106,21 @@
     $(document).ready(function(){
         $("#head").load("head.html")
     });
+    var sentences = [];
+    $(document).ready(function() {
+        sentences.push('쓰기 전에 한 번만 더 생각하세요');
+        sentences.push('소통의 창구, Public Screen!');
+        sentences.push('공감 소통 교류!');
+        
+        
+        TextPusher_ExampleText();
+    });
     
     function TextPusher()
     {
         var obj = {};
         obj['user-'+(Math.round(Math.random()*(20)))] = $("#TextPusher_Text").val();
-        firebase.database().ref("notice").set(obj);
+        firebase.database().ref("notice").update(obj);
         $("#TextPusher_Text").val('');
     }
     
@@ -103,8 +128,51 @@
     {
         var obj = {};
         obj['user-'+(Math.round(Math.random()*(20)))] = $("#TubePusher_Text").val();
-        firebase.database().ref("tube").set(obj);
+        firebase.database().ref("tube").update(obj);
         $("#TubePusher_Text").val('');
+    }
+    function TubePusher_ExampleText_Select()
+    {
+        $("#TubePusher_ExampleText").css("visibility",'hidden');
+        $("#TubePusher_ExampleText").css("display",'none');
+    }
+    function TubePusher_ExampleText_Deselect()
+    {
+        if ($("#TubePusher_Text").val() == '')
+        {
+            $("#TubePusher_ExampleText").css("visibility",'visible');
+            $("#TubePusher_ExampleText").css("display",'block');
+        }
+        else
+        {
+            $("#TubePusher_ExampleText").css("visibility",'hidden');
+            $("#TubePusher_ExampleText").css("display",'none');
+        }
+    }
+    function TextPusher_ExampleText_Select()
+    {
+        $("#TextPusher_ExampleText").css("visibility",'hidden');
+        $("#TextPusher_ExampleText").css("display",'none');
+    }
+    function TextPusher_ExampleText_Deselect()
+    {
+        if ($("#TextPusher_Text").val() == '')
+        {
+            TextPusher_ExampleText();
+            $("#TextPusher_ExampleText").css("visibility",'visible');
+            $("#TextPusher_ExampleText").css("display",'block');
+        }
+        else
+        {
+            $("#TextPusher_ExampleText").css("visibility",'hidden');
+            $("#TextPusher_ExampleText").css("display",'none');
+        }
+    }
+    function TextPusher_ExampleText()
+    {
+        index = Math.floor(Math.random()*(sentences.length));
+        
+        $("#TextPusher_ExampleSubText").text(sentences[index]);
     }
 </script> 
 
