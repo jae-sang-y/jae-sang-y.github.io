@@ -104,7 +104,7 @@
         var obj = {};
         obj['user-'+(Math.round(Math.random()*(20)))] = $("#TubePusher_Text").val();
         firebase.database().ref("tube").set(obj);
-        $("#TextPusher_Text").val('');
+        $("#TubePusher_Text").val('');
     }
 </script> 
 
