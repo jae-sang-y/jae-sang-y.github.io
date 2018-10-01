@@ -17,6 +17,17 @@
     
     <!--PLEASE PLEASE DON'T HACK THIS-->
     <script>
+        
+        var d = new Date();
+        var t = Date.getTime() % 30000000;
+        
+        var i;
+        for (i = 0; i < t; ++i)
+        {
+            Math.random();
+        }
+        
+        
       var config = {
         apiKey: "AIzaSyASYz82jEqLjeVwlGh7Hzn_f-eXCabfPDA",
         authDomain: "public-screen.firebaseapp.com",
@@ -109,6 +120,7 @@
     });
     var sentences = [];
     $(document).ready(function() {
+                
         sentences.push('쓰기 전에 한 번만 더 생각하세요');
         sentences.push('소통의 창구, Public Screen!');
         sentences.push('공감 소통 교류!');
