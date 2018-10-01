@@ -91,13 +91,17 @@
     
     function TextPusher()
     {
-        firebase.database().ref("notice").push().set($("#TextPusher_Text").val());
+        var obj = {};
+        obj['user-'+(Math.round(Math.random()*(20)))] = $("#TextPusher_Text").val();
+        firebase.database().ref("notice").set({obj});
         $("#TextPusher_Text").val('');
     }
     
     function TubePusher()
     {
-        firebase.database().ref("tube").push().set($("#TubePusher_Text").val());
+        var obj = {};
+        obj['user-'+(Math.round(Math.random()*(20)))] = $("#TubePusher_Text").val();
+        firebase.database().ref("tube").set(obj);
         $("#TextPusher_Text").val('');
     }
 </script> 
