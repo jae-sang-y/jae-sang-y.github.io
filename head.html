@@ -1,48 +1,17 @@
-<style>
-    @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
-    
-    .Header{
-        position: fixed;
-        left:0px;
-        top:0px;
-        background-image: linear-gradient(to right, #40E070, #3090FF); 
-        width:100%;
-        height:100px;
-        max-height: 100px;
-        overflow:hidden;
-    }
-    .HeaderItem{
-        float:left;
-        list-style-type: none;
-        outline: 1px solid #FFFFFF;
-        width:100px;
-        height:100px;
-        margin-right: 20px;
-    }
-    .HeaderItemTail{
-        float:right;
-        list-style-type: none;
-        outline: 1px solid #FFFFFF;
-        width:100px;
-        height:100px;
-    }
-</style>
-
 <div class="Header">
-    <ul style="padding-left: 30px;margin:0px 0px 0px 0px;">
+    <ul class="HeaderItemBar">
         <li class="HeaderItem">
-            <img src="icon/icons8-comments.svg" style="width:100%;height:100%;"  onclick="ShowPost('TextPusher');"/>
+            <img src="icon/icons8-comments.svg" class="SvgItem" onclick="ShowPost('TextPusher');"/>
         </li>
         <li class="HeaderItem">
-            <img src="icon/icons8-play-button.svg" style="width:100%;height:100%;" onclick="ShowPost('TubePusher');"/>
+            <img src="icon/icons8-play-button.svg" class="SvgItem" onclick="ShowPost('TubePusher');"/>
         </li>
         <li class="HeaderItemTail" onclick="ShowPost('Help');">
-            <img src="icon/icons8-info.svg" style="width:100%;height:100%;"/>
+            <img src="icon/icons8-info.svg" class="SvgItem"/>
         </li>
     </ul>
-    <div style="height:100px;overflow-x:auto;overflow-y: hidden;text-align: center;
-vertical-align: middle; line-height: 100px;color:white;">
-            Public Screen Page(0002)
+    <div class="HeaderTitle">
+            Public Screen Page(0004)
     </div>
 </div>
 
@@ -55,6 +24,4 @@ vertical-align: middle; line-height: 100px;color:white;">
         $("#" + post_id).css("visibility",'visible');
         $("#" + post_id).css("display",'block');
     }
-    
-    //$('img').on('dragstart', function(event) { alert(2); });
 </script> 
