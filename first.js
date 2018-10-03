@@ -39,10 +39,10 @@ function TextPusher()
     obj['user-'+(Math.round(Math.random()*(20)))] = $("#TextPusher_Text").val();
     firebase.database().ref("notice").update(obj).then(
     function(){
-        $("#TextPusher_Progress").text('정상적으로 전송했습니다.').css('opacity', '1.0').css('color','#66DD66').animate({ opacity: 0 }, 3000);
+        $("#TextPusher_Progress").text('정상적으로 전송했습니다.').css('color','#66DD66').clearQueue().animate({ opacity: 1 }, 250).animate({ opacity: 0 }, 3000);
     }).catch(
     function(error) {
-        $("#TextPusher_Progress").text('전송에 실패했습니다.' + error).css('opacity', '1.0').css('color','#DD6666').animate({ opacity: 0 }, 3000);
+        $("#TextPusher_Progress").text('전송에 실패했습니다.' + error).css('color','#DD6666').clearQueue().animate({ opacity: 1 }, 250).animate({ opacity: 0 }, 3000);
     });
     $("#TextPusher_Text").val('');
 }
@@ -55,16 +55,16 @@ function TubePusher()
         obj['user-'+(Math.round(Math.random()*(20)))] = $("#TubePusher_Text").val();
         firebase.database().ref("tube").update(obj).then(
         function(){
-            $$("#TubePusher_Progress").text('정상적으로 전송했습니다.').css('opacity', '1.0').css('color','#66DD66').animate({ opacity: 0 }, 3000);
+            $("#TubePusher_Progress").text('정상적으로 전송했습니다.').css('color','#66DD66').clearQueue().animate({ opacity: 1 }, 250).animate({ opacity: 0 }, 3000);
         }).catch(
         function(error) {
-            $("#TubePusher_Progress").text('전송에 실패했습니다.' + error).css('opacity', '1.0').css('color','#DD6666').animate({ opacity: 0 }, 3000);
+            $("#TubePusher_Progress").text('전송에 실패했습니다.' + error).css('color','#DD6666').clearQueue().animate({ opacity: 1 }, 250).animate({ opacity: 0 }, 3000);
         });
         $("#TubePusher_Text").val('');
     }
     else
     {
-        $("#TubePusher_Progress").text('형식에 맞지않는 링크입니다.').css('opacity', '1.0').css('color','#DD6666').animate({ opacity: 0 }, 3000);
+        $("#TubePusher_Progress").text('형식에 맞지않는 링크입니다.').css('color','#DD6666').clearQueue().animate({ opacity: 1 }, 250).animate({ opacity: 0 }, 3000);
         $("#TubePusher_Text").val('');
     }
 }
