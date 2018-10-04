@@ -36,7 +36,7 @@ function TextPusher()
 {
     var obj = {};
 
-    obj['user-'+(Math.round(Math.random()*(20)))] = $("#TextPusher_Text").val();
+    obj['user-'+(Math.round(Math.random()*(7)))] = $("#TextPusher_Text").val();
     firebase.database().ref("notice").update(obj).then(
     function(){
         $("#TextPusher_Progress").text('정상적으로 전송했습니다.').css('color','#66DD66').clearQueue().animate({ opacity: 1 }, 250).animate({ opacity: 0 }, 3000);
@@ -52,7 +52,7 @@ function TubePusher()
     if ($("#TubePusher_Text").val().includes('www.youtube.com/watch?v='))
     {
         var obj = {};
-        obj['user-'+(Math.round(Math.random()*(20)))] = $("#TubePusher_Text").val();
+        obj['user-'+(Math.round(Math.random()*(7)))] = $("#TubePusher_Text").val();
         firebase.database().ref("tube").update(obj).then(
         function(){
             $("#TubePusher_Progress").text('정상적으로 전송했습니다.').css('color','#66DD66').clearQueue().animate({ opacity: 1 }, 250).animate({ opacity: 0 }, 3000);
