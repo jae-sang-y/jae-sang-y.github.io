@@ -1,0 +1,89 @@
+<!--PLEASE DON'T HACK THIS-->
+
+<style>
+</style>
+<head>
+	<meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+    <!--PLEASE PLEASE DON'T HACK THIS-->
+    <script src="first.js"></script>
+    <link href="first.css" rel="stylesheet" type="text/css" media="all">
+
+</head>
+<body>
+    <!--Settler-->
+    
+    <div class="WrapPost">
+        <div id="TextPusher" class='Post'>
+            <p align="center">
+                Public Screen에 글 올리기
+            </p>
+            <span style="font-size: 21px;">
+                <!--<p align="justify">
+                    Public Screen에 글 올리기
+                </p>-->
+                <form id="TextPusher_Form">
+                    <div id="WrapTextPusher">
+                        <textarea id="TextPusher_Text" cols="40" rows="5" maxlength="50" autocomplete="off" onfocus="TextPusher_ExampleText_Select();" onblur="TextPusher_ExampleText_Deselect();"></textarea>
+                        <div id = "TextPusher_ExampleText">
+                            <p id="TextPusher_ShadowText">
+                                여기에 입력해주세요
+                            </p>
+                            <p id="TextPusher_ExampleSubText" onload="TextPusher_ExampleText();">
+                                여기에 데이터를 입력
+                            </p>
+                        </div>
+                        <p id="TextPusher_Progress">
+                            진행상황
+                        </p>
+                    </div>
+                    <br/>
+                    <input id="TextPusher_Submit" type="button" value="보내기" onclick="TextPusher();"/>
+                </form>
+            </span>
+        </div>
+        
+        <div id="TubePusher" class='Post'>
+            <p align="center">
+                Public Screen에 유튜브 올리기
+            </p>
+            <span style="font-size: 21px;">
+                <form id="TubePusher_Form">
+                    <div id="WrapTubePusher">
+                        <textarea id="TubePusher_Text" cols="50" rows="1" maxlength="50" autocomplete="off" onfocus="TubePusher_ExampleText_Select();" onblur="TubePusher_ExampleText_Deselect();"></textarea>
+                        <p id="TubePusher_ExampleText">
+                            https://www.youtube.com/watch?v=tIWpr3tHzII
+                        </p>
+                        <p id="TubePusher_Progress">
+                            진행상황
+                        </p>
+                    </div>
+                    <br/>
+                    <input id="TubePusher_Submit" type="button" value="보내기" onclick="TubePusher();"/>
+                </form>
+            </span>
+        </div>
+        <div id="Help" class='Post' style="display:block;visibility: visible">
+            <span style="margin: 0px 0px 0px 0px;font-size: 28px;">
+                이 곳에 자료를 올리시면 기숙사동 1층의 화면에 표시됩니다!
+                <br/>   
+                <br/>
+                현재 테스트 버전이라 불안정하고
+                <br/>
+                디버깅을 위해 대부분 정보를 공개하고 있습니다.
+            </span>
+        </div>
+        
+        
+        
+    </div>
+    
+    <div id="Taketotop" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+        top
+    </div>
+	
+    <div id ="head"></div>
+    
+    <!--Load Resource-->
+</body>

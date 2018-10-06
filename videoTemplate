@@ -1,0 +1,13 @@
+<div class="PostWrap">
+    <div class="Post">
+        <div class="Post_Header">
+            유튜브영상 올리기
+        </div>
+        <div class="Post_Sec">
+            <form action="#" method="post" id="Post_SecVideofrom">
+                <textarea id="Post_SecVideofromTextarea" placeholder="ex) https://www.youtub.com/watch?v=tlWpr3tHzll"></textarea>
+                <button id="Post_SecVideofromButton" type="submit">보내기</button>
+            </form>
+        </div>
+    </div>
+</div>
