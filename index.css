@@ -96,6 +96,9 @@ html, body {
     font-weight: 550;
     padding: 20px 0 20px; 
 }
+.Post_Sec textarea{
+    overflow: hidden;
+}
 
 /* 비디오 템플릿 */
 #Post_SecVideofromTextarea, #Post_SecVideofromButton{
