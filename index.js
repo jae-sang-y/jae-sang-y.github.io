@@ -20,6 +20,12 @@ function Popup_Close(){
     CButton.style.display = 'none';
 }
 
+$("#js_SubmitButton").on('click', function(){
+    let message = document.querySelector(".Post_Sec textarea").value;
+    if("" == message){
+        $("#AlertPage").show();
+    }
+})
 
 
 // const content = document.getElementById("js_Content");

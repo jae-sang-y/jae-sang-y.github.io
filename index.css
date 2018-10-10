@@ -1,6 +1,7 @@
 *{
     margin: 0;
     box-sizing: border-box;
+    font-family: Do Hyeon;
 }
 a:link { color: white; text-decoration: none;}
 a:visited { color: white; text-decoration: none;}
@@ -13,13 +14,13 @@ html, body {
 
 .MainWrap{
     position: relative;
-    height: 99%;
+    height: 100%;
 }
 
 /* SideBar */
 .SideBar{
     background-color: #222222;
-    font-family: Do Hyeon;
+    font-family: inherit;
     width: 271px;
     height: 100%;
     position: fixed;
@@ -61,7 +62,7 @@ html, body {
 
 /* 컨탠츠 */
 .ContentWrap{
-    margin-top: 95px;
+    /* margin-top: 95px; */
     margin-left: 291px;
 }
 .Content{
@@ -88,7 +89,7 @@ html, body {
     color: black;
 }
 .Post *{
-    font-family: Do Hyeon;
+    font-family: inherit;
 }
 .Post_Header{
     font-size: 40px;
@@ -151,11 +152,11 @@ html, body {
     bottom: 15px;
 }
 .Notice{
-    font-size: 15px;
+    font-size: 17px;
 }
 .Notice_Header{
     font-size: 20px;
-    font-weight: 800;
+    font-weight: 700;
     margin-bottom: 5px;
 }
 .close{
@@ -164,4 +165,64 @@ html, body {
     position: absolute;
     right: 8px;
     top: 5px;
+}
+
+/* 알림 alert */
+#AlertPage{
+    display: none !important; 
+    z-index: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.AlertWrap{
+    position: relative;
+    background-color: white;
+    width: 500px;
+    height: 300px;
+    padding: 0 150px 0;
+    border-radius: 10px;
+}
+.Alert{
+    text-align: center;
+    position: inherit;
+    top: 20%;
+}
+
+.Alert_Status{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: inherit;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    border: 3px solid #ffc34d;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    color: #ffc34d;
+}
+.Alert_StatusIcon{
+    color: inherit;
+}
+.Alert_Sec{
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+.Alert_Button{
+    cursor: pointer;
+    border: 0;
+    width: 70px;
+    height: 30px;
+    border-radius: 30px;
+    background: initial;
+    background-color: #3085d6;
+    color: #fff;
+    font-size: 16px;
 }
