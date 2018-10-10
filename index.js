@@ -15,17 +15,17 @@ function Upload (e) {
 }
 
 // 공지창 닫기
-function Popup_Close(){
-    let CButton = document.getElementById("js_NoticeWrap");
-    CButton.style.display = 'none';
-}
+// function Popup_Close(){
+//     let CButton = document.getElementById("js_NoticeWrap");
+//     CButton.style.display = 'none';
+// }
 
-$("#js_SubmitButton").on('click', function(){
-    let message = document.querySelector(".Post_Sec textarea").value;
-    if("" == message){
-        $("#AlertPage").show();
-    }
-})
+// $("#js_SubmitButton").on('click', function(){
+//     let message = document.querySelector(".Post_Sec textarea").value;
+//     if("" == message){
+//         $("#AlertPage").show();
+//     }
+// })
 
 
 // const content = document.getElementById("js_Content");
