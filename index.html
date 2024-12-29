@@ -22,7 +22,8 @@ document.getElementById('hls-example').height = window.innerHeight;
 var player = videojs('hls-example', {
 	liveui: true, 
 	controls: true, 
-	playsinline:true
+	playsinline:true,
+	autoplay:'any',
 });
 setTimeout( () => {
 	player.play();
